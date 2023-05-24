@@ -3,6 +3,8 @@
 
 fun main(){
 
+    val initialTime = java.lang.System.currentTimeMillis()
+
     data class Info(val r : Int){
 
         val numbers = (1 until 1000).toList().filter { it % r == 0 }
@@ -12,6 +14,8 @@ fun main(){
 
     }
 
-    print(Info(3).sum + Info(5).sum - Info(15).sum)
+    println(Info(3).sum + Info(5).sum - Info(15).sum)
+
+    println("Time spent: ${java.lang.System.currentTimeMillis() - initialTime} ms")
 
 }
